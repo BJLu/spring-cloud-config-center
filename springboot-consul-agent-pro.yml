@@ -1,0 +1,30 @@
+feign.hystrix.enabled: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 25000
+ribbon:
+  ConnectTimeout: 25000
+  ReadTimeout: 25000
+spring: 
+#  rabbitmq: 
+#           host: 192.168.20.175
+#           port: 5672
+#           username: scm-message-service
+#           password: scm-message-service
+#           virtual-host: /scm-message-service
+  cloud:
+        consul: 
+          host: 192.168.57.146
+          port: 8500
+          discovery: 
+            prefer-agent-address: true
+            prefer-ip-address: true
+            health-check-interval: 10s
+            register: true
+            register-health-check: true 
+  jackson: 
+       date-format: yyyy-MM-dd HH:mm:ss
+       time-zone: GMT+8
+#banner: 
+#       charset: UTF-8 # Banner file encoding.
+#       location: classpath:banner/banner.txt # Banner file location.
+#       image:
+#             location: classpath:banner/logo.jpg # Banner image file location (jpg/png can also be used).
